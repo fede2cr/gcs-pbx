@@ -1,0 +1,6 @@
+sleep 15s # Wait for DHCP
+( cd /root/cc-pbx/trunk/bin
+  ./sources.sh > /root/sources.log || exit 1
+  cp /root/cc-pbx/trunk/src/rc.local.install /etc/rc.local )
+  reboot 
+

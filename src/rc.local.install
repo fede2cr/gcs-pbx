@@ -1,0 +1,6 @@
+sleep 15s # Wait for DHCP
+( cd /root/cc-pbx/trunk/bin
+  whiptail --title Install --msgbox "Will now fix sources and will later restart" 10 40
+  ./gcs-install.sh > /root/install.log || exit 1
+  mv /etc/rc.local.orig /etc/rc.local )
+

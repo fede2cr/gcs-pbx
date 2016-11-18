@@ -1,0 +1,12 @@
+270c270
+< memory_limit = 16M      ; Maximum amount of memory a script may consume (16MB)
+---
+> memory_limit = 110M      ; Maximum amount of memory a script may consume (16MB)
+457c457
+< magic_quotes_gpc = On
+---
+> magic_quotes_gpc = Off
+565c565
+< upload_max_filesize = 2M
+---
+> upload_max_filesize = 100M

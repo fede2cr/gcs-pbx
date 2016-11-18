@@ -1,0 +1,11 @@
+--- /etc/modprobe.d/aliases.orig	2008-02-25 15:20:29.000000000 -0600
++++ /etc/modprobe.d/aliases	2009-07-30 19:00:50.000000000 -0600
+@@ -14,7 +14,7 @@
+ alias net-pf-7  bridge
+ alias net-pf-8  atm
+ alias net-pf-9  x25
+-alias net-pf-10 ipv6
++alias net-pf-10 none
+ alias net-pf-11 rose
+ alias net-pf-12 decnet
+ # 13 NETBEUI

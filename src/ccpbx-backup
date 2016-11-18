@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Backup pbxreports DB to /var/lib/asterisk/backups/PBX-Reports-DB
+Backup_dir=/var/lib/asterisk/backups
+PBXReports_dir=$Backup_dir/PBX-Reports-DB
+Backup_dst=/mnt/respaldo/backups
+Recording_dst=/mnt/respaldo/recordings
+
+if [ -d $PBXReports_dir ]
+then
+	mysqldump -u root -pgreencore pbxreports > $PBXReports_dir/pbxreports-`date +%Y%m%d`.db
+fi
+
+# Rsync backups to SMB remote partition
+if [ -d /mnt/respaldo/backups ]
+then
+	rsync -a /var/lib/asterisk/backups/ /mnt/respaldo/backups
+fi
+# Rsync recording files to SMB remote partition
+if [ -d /mnt/respaldo/recordings ]
+then
+	rsync -a /var/spool/asterisk/monitor/ /mnt/respaldo/recordings/
+fi
+
